@@ -1,0 +1,94 @@
+@import 'tailwindcss';
+
+@font-face {
+	font-family: 'ds-clock';
+	src: url('$lib/assets/fonts/clock/nintendo-ds-clock-numbers-font.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'ds-system';
+	src: url('$lib/assets/fonts/system/nitrods-font.ttf') format('truetype');
+}
+
+@theme {
+	/* background */
+	--color-ds-bg: #fbfbfb;
+	--color-ds-grid-stripe: #e3e3e3;
+	--color-ds-small-grid-border: #c3c3c3;
+	--color-ds-large-grid-border: #aaaaaa;
+
+	/* clock */
+	--color-ds-clock: #b2b2b2;
+	--color-ds-clock-center: #494949;
+	--color-ds-clock-dot: #797979;
+
+	/* calendar */
+	--color-ds-calendar-bg-header: #696969;
+	--color-ds-calendar-header-bg-sunday: #d30000;
+	--color-ds-calendar-header-bg-saturday: #0041c3;
+	--color-ds-calendar-bg-sunday: #fba2eb;
+	--color-ds-calendar-bg-saturday: #82aafb;
+	--color-ds-calendar-text-sunday: #790000;
+	--color-ds-calendar-text-saturday: #000082;
+	--color-ds-calendar-grid-border: #929292;
+
+	/* fonts */
+	--font-clock: 'ds-clock', 'system-ui';
+	--font-system: 'ds-system', 'system-ui';
+
+	/* themes */
+	--color-ds-theme-slate: #61829a;
+
+	--text-xs: 7px;
+	--text-xs--letter-spacing: 0.5px;
+
+	--text-sm: 7.5px;
+	--text-sm--letter-spacing: 0.5px;
+
+	--text-base: 8px;
+	--text-base--letter-spacing: 0.5px;
+
+	--text-lg: 10px;
+	--text-base--letter-spacing: 0.5px;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	49% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes float-out {
+	0% {
+		top: 1px;
+	}
+	100% {
+		top: -191px;
+	}
+}
+
+/* global */
+@layer base {
+	:root {
+		font-smooth: never;
+		@apply font-system;
+	}
+
+	::selection {
+		@apply bg-ds-theme-slate/50 text-white;
+	}
+
+	img {
+		image-rendering: pixelated;
+		object-fit: none;
+	}
+}
