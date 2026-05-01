@@ -7,7 +7,7 @@
 	import { clock } from '$lib/scripts/clock.svelte';
 
 	let firstDay: number = $derived(new Date(clock.date.getFullYear(), clock.date.getMonth()).getDate());
-	let lastDay: number = $derived(new Date(clock.date.getFullYear(), clock.date.getMonth() - 1, 0).getDate());
+	let lastDay: number = $derived(new Date(clock.date.getFullYear(), clock.date.getMonth() + 1, 0).getDate());
 </script>
 
 <!-- calendar header -->

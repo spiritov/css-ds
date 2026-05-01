@@ -4,6 +4,7 @@
 	import { clock } from '$lib/scripts/clock.svelte';
 	import { getInitBottomGrid, getInitTopGrid } from '$lib/scripts/grids';
 	import { fade } from 'svelte/transition';
+	import { store } from '$lib/scripts/store.svelte';
 
 	let topGrid: Cell[][] = $state(getInitTopGrid());
 	let bottomGrid: Cell[][] = $state(getInitBottomGrid());
@@ -28,8 +29,11 @@
 	});
 </script>
 
-<div transition:fade|global={{ duration: 250 }} class="mt-64 flex scale-200 items-end justify-center">
-	<div class="flex flex-col">
+<div
+	transition:fade|global={{ duration: 250 }}
+	class="flex h-screen items-center justify-center {store.darkmode ? 'bg-black' : ''}"
+>
+	<div class="flex origin-center scale-200 flex-col">
 		<TopScreen bind:grid={topGrid} />
 
 		<BottomScreen bind:grid={bottomGrid} />

@@ -65,7 +65,7 @@
 <svelte:document onkeydown={(event) => inputKey(event.key.toLowerCase())} />
 
 <div
-	class="pointer-events-noneds absolute z-20 border-0 outline-0 transition-all duration-500 ease-[cubic-bezier(0.1,0.5,0.05,1)] {getTwSize()}"
+	class="pointer-events-none absolute z-20 border-0 outline-0 transition-all duration-500 ease-[cubic-bezier(0.1,0.5,0.05,1)] {getTwSize()}"
 	transition:fade|global={{ duration: 250, delay: 250 }}
 	style:left={`${(x === 4 ? (y === 0 ? 1 : y === 3 ? -31 : y === 5 ? -14 : -16) : -16) + y * 48}px`}
 	style:top={`${-24 + x * 48}px`}

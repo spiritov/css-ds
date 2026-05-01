@@ -20,7 +20,7 @@
 </script>
 
 {#if visible}
-	<div class="relative top-px left-px z-10" transition:fade|global={{ duration: 250, delay: 250 }}>
+	<div class=" relative top-px left-px z-10" transition:fade|global={{ duration: 250, delay: 250 }}>
 		{#if component === 'ds_card'}
 			<DSCard />
 		{:else if component === 'pictochat'}
