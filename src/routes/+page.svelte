@@ -31,9 +31,9 @@
 
 <div
 	transition:fade|global={{ duration: 250 }}
-	class="flex h-screen items-center justify-center {store.darkmode ? 'bg-black' : ''}"
+	class="flex h-screen items-start justify-center 2xl:pt-4 {store.darkmode ? 'bg-black' : ''}"
 >
-	<div class="flex origin-center scale-200 flex-col">
+	<div class="flex origin-top scale-200 flex-col">
 		<TopScreen bind:grid={topGrid} />
 
 		<BottomScreen bind:grid={bottomGrid} />
