@@ -6,7 +6,7 @@
 
 	import { clock } from '$lib/scripts/clock.svelte';
 
-	let firstDay: number = $derived(new Date(clock.date.getFullYear(), clock.date.getMonth()).getDate());
+	let firstDay: number = $derived(new Date(clock.date.getFullYear(), clock.date.getMonth()).getDay());
 	let lastDay: number = $derived(new Date(clock.date.getFullYear(), clock.date.getMonth() + 1, 0).getDate());
 </script>
 
@@ -30,8 +30,9 @@
 	</div>
 	<!-- calendar days -->
 	<div class="grid grid-cols-7 grid-rows-5 gap-px border border-t-0 bg-ds-calendar-grid-border">
-		{#each { length: 35 }, i}
-			{@const day = i - firstDay + 1}
+		<!-- account for 6 cols -->
+		{#each { length: lastDay + firstDay > 35 ? 42 : 35 }, i}
+			{@const day = i - firstDay}
 			<div
 				class="relative grid size-[15px] place-content-center text-sm
         {i % 7 === 0
