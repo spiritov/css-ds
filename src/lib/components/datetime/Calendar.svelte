@@ -57,7 +57,7 @@
 					</div>
 				{/if}
 				<span class="relative z-10 ml-px tracking-wide">
-					{day < lastDay ? day + 1 : ''}
+					{day < lastDay && day >= 0 ? day + 1 : ''}
 				</span>
 			</div>
 		{/each}
